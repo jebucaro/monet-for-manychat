@@ -1,0 +1,38 @@
+{
+    "auth": {
+        "type": "APIKEY",
+        "params": [
+            {
+                "name": "api_key",
+                "title": "ManyChat API Key"
+            }
+        ]
+    },
+    "actions": [
+        {
+            "name": "get_user_picture",
+            "forms": [],
+            "title": "🙂 Get Profile Picture",
+            "requests": [
+                {
+                    "url": "https://api.manychat.com/fb/subscriber/getInfo?subscriber_id={{user_id}}",
+                    "method": "GET",
+                    "headers": [
+                            "Content-Type: application/json",
+                            "Authorization: Bearer [[api_key]]"
+                    ],
+                    "mapping": [
+                        {
+                            "name": "profile_picture_url",
+                            "path": ".data.profile_pic",
+                            "type": "string",
+                            "title": "Profile Picture"
+                        }
+                    ],
+                    "payload": null
+                }
+            ],
+            "description": "Get current user profile picture URL directly from ManyChat API"
+        }
+    ]
+}

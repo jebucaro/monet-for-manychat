@@ -6,7 +6,12 @@
                 "name": "api_key",
                 "title": "ManyChat API Key"
             }
-        ]
+        ],
+        "connection": {
+            "headers": {
+                "Authorization": "Bearer [[api_key]]"
+            }
+        }
     },
     "actions": [
         {
@@ -18,8 +23,7 @@
                     "url": "https://api.manychat.com/fb/subscriber/getInfo?subscriber_id={{user_id}}",
                     "method": "GET",
                     "headers": [
-                            "Content-Type: application/json",
-                            "Authorization: Bearer [[api_key]]"
+                            "Content-Type: application/json"
                     ],
                     "mapping": [
                         {
